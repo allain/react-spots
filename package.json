@@ -1,0 +1,80 @@
+{
+  "name": "react-spots",
+  "version": "0.1.0",
+  "description": "Define extensible content regions for react",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build-client",
+    "build-client": "parcel build index.js -d dist",
+    "dev": "parcel index.js -d dist",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Allain Lalonde <allain.lalonde@gmail.com>",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "debug": "^3.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier-standard": "^1.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-flowtype": "^2.45.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "parcel-bundler": "^1.6.2",
+    "prettier": "^1.10.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0"
+  },
+  "dependencies": {
+    "path-to-regexp": "^2.1.0",
+    "prop-types": "^15.6.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "setupFiles": [
+      "./src/shim.js",
+      "./src/setup.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allain/react-content-region.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allain/react-content-region/issues"
+  },
+  "homepage": "https://github.com/allain/react-content-region#readme"
+}

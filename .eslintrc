@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "extends": "prettier-standard",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "jasmine": true
+  },
+  "plugins": [
+    "babel",
+    "class-property",
+    "flowtype",
+    "json",
+    "react"
+  ],
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
+  },
+  "rules": {
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error"
+  }
+
+}

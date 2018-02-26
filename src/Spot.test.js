@@ -4,16 +4,6 @@ import SpotContent from './SpotContent'
 import Spot from './Spot'
 import SpotProvider from './SpotProvider'
 
-it('complains then using Spot without SpotProvider', () =>
-  expect(() => mount(<Spot name="test" />).html()).toThrow(
-    /missing SpotProvider/
-  ))
-
-it('complains then using SpotContent without SpotProvider', () =>
-  expect(() => mount(<SpotContent match="test" />).html()).toThrow(
-    /missing SpotProvider/
-  ))
-
 it('is empty when no children and no content or spots', () => {
   const spot = mount(<SpotProvider />)
   expect(spot.html()).toEqual(null)
@@ -90,4 +80,18 @@ it('can match multiple spots', () => {
   )
 
   expect(spot.html()).toEqual('<div><div>123</div><div>321</div></div>')
+})
+
+it('spot can have multiple content pushers', () => {
+  const spot = mount(
+    <SpotProvider>
+      <div>
+        <Spot name="test" />
+      </div>
+      <SpotContent match="test" component={() => <div>A</div>} />
+      <SpotContent match="test" component={() => <div>B</div>} />
+    </SpotProvider>
+  )
+
+  expect(spot.html()).toEqual('<div><div>A</div><div>B</div></div>')
 })

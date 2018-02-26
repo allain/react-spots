@@ -6,13 +6,11 @@ const debug = Debug('spot:provider')
 
 class SpotProvider extends React.Component {
   state = {
-    spots: {},
     contents: {}
   }
 
   getChildContext() {
     return {
-      spots: this.state.spots,
       contents: this.state.contents,
       provider: this
     }
@@ -22,27 +20,28 @@ class SpotProvider extends React.Component {
     return <React.Fragment>{this.props.children || null}</React.Fragment>
   }
 
-  addSpot(name, spot) {
-    debug('adding spot %s', name)
+  register(id, contentSpec) {
+    debug('adding content %s', id)
+
     this.setState(state => ({
       ...state,
-      spots: { ...state.spots, [name]: spot }
+      contents: { ...state.contents, [id]: contentSpec }
     }))
   }
 
-  removeSpot(name) {
-    debug('removing spot %s', name)
+  unregister(id) {
+    debug('removing spot %s', id)
+
     this.setState(state => {
-      const newSpots = { ...this.state.spots }
-      delete newSpots[name]
-      return { spots: newSpots }
+      const newContents = { ...this.state.contents }
+      delete newContents[id]
+      return { contents: newContents }
     })
   }
 }
 
 SpotProvider.childContextTypes = {
   contents: PropTypes.any.isRequired,
-  spots: PropTypes.any.isRequired,
   provider: PropTypes.object.isRequired
 }
 

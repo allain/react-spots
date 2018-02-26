@@ -1,6 +1,6 @@
 {
   "name": "react-spots",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Define extensible content regions for react",
   "main": "dist/index.js",
   "scripts": {

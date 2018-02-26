@@ -1,8 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import SpotContent from './SpotContent'
-import Spot from './Spot'
-import SpotProvider from './SpotProvider'
+import { Spot, SpotProvider, SpotContent } from '../src'
 
 it('is empty when no children and no content or spots', () => {
   const spot = mount(<SpotProvider />)

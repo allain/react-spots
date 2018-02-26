@@ -1,8 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Debug from 'debug'
-
-const debug = Debug('spot:provider')
 
 class SpotProvider extends React.Component {
   state = {
@@ -23,8 +20,6 @@ class SpotProvider extends React.Component {
   }
 
   register(id, contentSpec) {
-    debug('adding content %s', id)
-
     this.setState(state => ({
       ...state,
       contents: { ...state.contents, [id]: contentSpec }
@@ -32,8 +27,6 @@ class SpotProvider extends React.Component {
   }
 
   unregister(id) {
-    debug('removing spot %s', id)
-
     this.setState(state => {
       const newContents = { ...this.state.contents }
       delete newContents[id]

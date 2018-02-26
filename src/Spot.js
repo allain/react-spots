@@ -19,7 +19,7 @@ class Spot extends React.Component<Props> {
   }
 
   buildSpotContent() {
-    return Object.entries(this.context.contents).reduce(
+    return Object.entries(this.context._spots.contents).reduce(
       (rendered, [id, { match, component }]) => {
         const pathMatch = matchPath(this.props.name, match)
 
@@ -35,8 +35,7 @@ class Spot extends React.Component<Props> {
 }
 
 Spot.contextTypes = {
-  contents: PropTypes.any.isRequired,
-  provider: PropTypes.object.isRequired
+  _spots: PropTypes.object.isRequired
 }
 
 export default Spot

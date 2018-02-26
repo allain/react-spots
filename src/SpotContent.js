@@ -15,7 +15,7 @@ class SpotContent extends React.Component<Props> {
   }
 
   componentDidMount() {
-    const { provider } = this.context
+    const { provider } = this.context && this.context._spots
 
     console.assert(provider, 'missing SpotProvider')
 
@@ -23,7 +23,7 @@ class SpotContent extends React.Component<Props> {
   }
 
   componentWillUnmount() {
-    const { provider } = this.context
+    const { provider } = this.context._spots
     provider.unregister(this.state.id)
   }
 
@@ -33,8 +33,7 @@ class SpotContent extends React.Component<Props> {
 }
 
 SpotContent.contextTypes = {
-  contents: PropTypes.any.isRequired,
-  provider: PropTypes.any
+  _spots: PropTypes.object.isRequired
 }
 
 export default SpotContent

@@ -11,8 +11,10 @@ class SpotProvider extends React.Component {
 
   getChildContext() {
     return {
-      contents: this.state.contents,
-      provider: this
+      _spots: {
+        contents: this.state.contents,
+        provider: this
+      }
     }
   }
 
@@ -41,8 +43,7 @@ class SpotProvider extends React.Component {
 }
 
 SpotProvider.childContextTypes = {
-  contents: PropTypes.any.isRequired,
-  provider: PropTypes.object.isRequired
+  _spots: PropTypes.object.isRequired
 }
 
 export default SpotProvider

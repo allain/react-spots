@@ -74,10 +74,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allain/react-props.git"
+    "url": "git+https://github.com/allain/react-spots.git"
   },
   "bugs": {
-    "url": "https://github.com/allain/react-props/issues"
+    "url": "https://github.com/allain/react-spots/issues"
   },
-  "homepage": "https://github.com/allain/react-props#readme"
+  "homepage": "https://github.com/allain/react-spots#readme"
 }

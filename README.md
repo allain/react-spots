@@ -1,6 +1,8 @@
 # react-spots
 
-A library that supports extensible content areas.
+A library that supports **extensible content areas**.
+
+It allows React authors to inject dynamic content into sections of the component tree they're nowhere near.
 
 ## Example Usage
 
@@ -20,5 +22,18 @@ const content = <SpotProvider>
 </SpotProvider>
 
 ReactDom.render(content, document.getElementById('app'))
-
 ```
+
+## API
+
+### `<SpotProvider>`
+
+Provides the common area in which SpotContent and Spots can see each other.
+
+### `<Spot name="name-here" />`
+
+Spot component provide spots where content can be injected.
+
+### `<SpotContent match="pattern" component={Component} />`
+
+Matches the patten against the name of any mounted Spot. If a match is found, it uses the component specified to generate content and adds it to the spot.

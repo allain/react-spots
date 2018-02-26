@@ -1,1 +1,8 @@
 src
+test
+coverage
+.vscode
+.cache
+examples
+.eslintrc
+.babelrc
